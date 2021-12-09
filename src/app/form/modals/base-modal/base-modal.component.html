@@ -1,0 +1,23 @@
+<ng-template #divModal let-modal>
+    <div class="rounded-0 bg-white">
+        <app-create-user
+          *ngIf="target === 'crearUsuario'"
+          (cerrarModal)="modal.close()"
+          [user]="data"
+          (dataUser)="dataUser($event)"        
+        ></app-create-user>
+
+        <app-view-user
+        *ngIf="target === 'verUsuario'"
+        (cerrarModal)="modal.close()"
+        [user]="data"
+      ></app-view-user>
+
+
+      <app-update-user
+        *ngIf="target === 'editarUsuario'"
+        (cerrarModal)="modal.close()"
+        [user]="data"
+      ></app-update-user>
+    </div>
+</ng-template>

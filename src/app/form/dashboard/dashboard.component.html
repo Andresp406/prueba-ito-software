@@ -1,0 +1,42 @@
+<form [formGroup]="forma" (ngSubmit)="createUser($event)" class="container">
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Email"
+        formControlName="email"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        formControlName="usuario"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First Name"
+        formControlName="nombre"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Last name"
+        formControlName="apellido"
+      />
+    </div>
+  </div>
+  <div class="align-items-center mt-3 m-auto">
+  <button class="btn btn-primary ">Buscar</button>
+  <button class="btn btn-secondary " (click)="btnCreateUser.open($event)">Crear Usuario</button>
+  </div>
+</form>
+<app-table [dataUser]="dataUser"></app-table>
+<app-base-modal #btnCreateUser [target]="'crearUsuario'" (newUser)="newUser($event)"></app-base-modal>

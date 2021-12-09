@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "prueba@test.com",
+      "nombre": "test1",
+      "apellido": "apelllio de prueba",
+      "usuario": "testuser",
+      "status": "activo"
+    },
+    {
+      "id": 2,
+      "email": "prueba@test.com",
+      "nombre": "test1",
+      "apellido": "apelllio de prueba",
+      "usuario": "testuser",
+      "status": "activo"
+    },
+    {
+      "id": 3,
+      "email": "prueba@test.com",
+      "nombre": "test1",
+      "apellido": "apelllio de prueba",
+      "usuario": "testuser",
+      "status": "activo"
+    },
+    {
+      "id": 4,
+      "email": "prueba@test.com",
+      "nombre": "test1",
+      "apellido": "apelllio de prueba",
+      "usuario": "testuser",
+      "status": "activo"
+    },
+    {
+      "id": 5,
+      "email": "prueba@test.com",
+      "nombre": "test1",
+      "apellido": "apelllio de prueba",
+      "usuario": "testuser",
+      "status": "activo"
+    },
+    {
+      "id": 6,
+      "email": "prueba@test.com",
+      "nombre": "test1",
+      "apellido": "apelllio de prueba",
+      "usuario": "testuser",
+      "status": "inactivo"
+    },
+    {
+      "id": 7,
+      "email": "prueba@test.com",
+      "nombre": "test1",
+      "apellido": "apelllio de prueba",
+      "usuario": "testuser",
+      "status": "inactivo"
+    },
+    {
+      "id": 8,
+      "email": "oracle406@gmail.com",
+      "usuario": "oracle",
+      "nombre": "andres",
+      "apellido": "penagos",
+      "status": "inactivo"
+    },
+    {
+      "id": 9,
+      "email": "soendra2009@hotmail.com",
+      "usuario": "soe",
+      "nombre": "soendra",
+      "apellido": "henriquez",
+      "status": "activo"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+<div class="container mt-3 mb-3 modal-content rounded-0" style="width: 390px; height: auto">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <span class="modal-title exo mt-1 mb-0" style="font-size: 16px"
+        >VIEW PROFILE</span
+      >
+     <app-button-close
+        [addClassTopRight]="false"
+        (cerrarModal)="cerrar($event)"
+      ></app-button-close> 
+    </div>
+    <!-- Modal body -->
+    <form
+      class="modal-body p-3"
+    >
+    <div class="mb-2 text-right" style="height: 50px">
+      <input
+        type="email"
+        class="form-control exo text-field shadow-none disabled"
+        [placeholder]="user.email"
+        #email
+        disabled
+      />
+     </div>
+     <div class="mb-2 text-right" style="height: 50px">
+        <input
+          type="text"
+          class="form-control exo text-field shadow-none disabled"
+          style="z-index: 50"
+          [placeholder]="user.usuario"
+          disabled
+          #username
+        />       
+      </div>
+      <div class="mb-2 text-right" style="height: 50px">
+        <input
+          type="text"
+          class="form-control exo text-field shadow-none disabled"
+          [placeholder]="user.nombre"
+          #nombre
+          disabled
+        />
+       </div>
+       <div class="mb-2 text-right" style="height: 50px">
+        <input
+          type="text"
+          class="form-control exo text-field shadow-none disabled"
+          [placeholder]="user.apellido"
+          #apellido
+          disabled
+        />
+       </div>
+       <div class="mb-2 text-right" style="height: 50px">
+        <select class="form-control exo text-field shadow-none disabled" disabled>
+        
+          
+          <option>{{user.status}}</option> 
+        </select>
+       </div>
+  
+      <button
+        type=""
+        (click)="cerrar(true)"
+        class="btn btn-primary aldrich shadow-none rounded-0 "
+        style="width: 100%; height: 50px; opacity: 1"
+        data-dismiss="modal"
+        >
+        CLOSE
+      </button>
+    </form>
+  </div>
