@@ -49,4 +49,8 @@ export class UpdateUserComponent implements OnInit {
     });
   }
 
+  updateData(){
+    console.log(this.forma.controls)
+  }
+
 }
