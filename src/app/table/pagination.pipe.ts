@@ -10,8 +10,31 @@ export class PaginationPipe implements PipeTransform {
     if ( search.length === 0 ){
       return users.slice(page, page + 5);
     }
-    const filteredUsers = users.filter(user=> user.nombre.includes(search));
-    return filteredUsers.slice(page, page + 5);
+
+    var filteredUsers = users.filter(user=> user.nombre.includes(search));
+    if ( search === 'nombre'){
+      filteredUsers = users.filter(user=> user.nombre.includes(search));
+      return filteredUsers.slice(page, page + 5);
+
+    }
+    if ( search === 'apellido'){
+      filteredUsers = users.filter(user=> user.apellido.includes(search));
+      return filteredUsers.slice(page, page + 5);
+
+    }
+    if ( search === 'email'){
+      filteredUsers = users.filter(user=> user.email.includes(search));
+      return filteredUsers.slice(page, page + 5);
+
+    }
+    if ( search === 'usuario'){
+      filteredUsers = users.filter(user=> user.usuario.includes(search));
+      return filteredUsers.slice(page, page + 5);
+
+    }
+
+
+   return users;
   }
 
 }

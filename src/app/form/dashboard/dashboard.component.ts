@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
   }
 
   search(search:string){
-    this.page = 0;
+    this.page = 0; 
     this.searchUser = search;
   }
 

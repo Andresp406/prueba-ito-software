@@ -1,14 +1,13 @@
 <h1 class="container">Clientes</h1>
-<form [formGroup]="forma" (ngSubmit)="createUser($event)" class="container">
+<form class="container">
   <div class="row">
     <div class="col">
       <input
         type="text"
         class="form-control"
         placeholder="Email"
-        formControlName="email"
-        #txtSearch
-        (keyup)="search(txtSearch.value)"
+        #email
+        (keyup)="search(email.value)"
         
         
       />
@@ -18,9 +17,8 @@
         type="text"
         class="form-control"
         placeholder="Username"
-        formControlName="usuario"
-        #txtSearch
-        (keyup)="search(txtSearch.value)"
+        #usuario
+        (keyup)="search(usuario.value)"
 
       />
     </div>
@@ -29,9 +27,8 @@
         type="text"
         class="form-control"
         placeholder="First Name"
-        formControlName="nombre"
-        #txtSearch
-        (keyup)="search(txtSearch.value)"
+        #nombre
+        (keyup)="search(nombre.value)"
 
       />
     </div>
@@ -40,18 +37,14 @@
         type="text"
         class="form-control"
         placeholder="Last name"
-        formControlName="apellido"
-        #txtSearch
-        (keyup)="search(txtSearch.value)"
+        #apellido
+        (keyup)="search(apellido.value)"
       />
-    </div>
+    </div> 
   </div>
   <div class="row mt-3">
-    <div class="col-md-2">
-      <button class="btn btn-primary">Buscar</button>
-    </div>
     <div class="col-md-2 w-full">
-      <button class="btn btn-secondary " (click)="btnCreateUser.open($event)">Crear</button>
+      <button class="btn btn-secondary " (click)="btnCreateUser.open($event)"><i class="fas fa-plus"></i></button>
     </div>
   </div>
 </form>

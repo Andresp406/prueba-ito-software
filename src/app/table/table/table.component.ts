@@ -40,10 +40,6 @@ export class TableComponent implements OnInit {
     })
   }
 
-  view(customer:IDataUser){
-    console.log(customer);
-  }
-
   updateUser(customer:IDataUser){
     this.dataUser = customer;
   }
