@@ -3,17 +3,17 @@
     {
       "id": 1,
       "email": "prueba@test.com",
-      "nombre": "test1",
+      "usuario": "soendra",
+      "nombre": "test3",
       "apellido": "apelllio de prueba",
-      "usuario": "testuser",
       "status": "activo"
     },
     {
       "id": 2,
-      "email": "prueba@test.com",
-      "nombre": "test1",
-      "apellido": "apelllio de prueba",
-      "usuario": "testuser",
+      "email": "soendra2009@hotmail.com",
+      "usuario": "andres",
+      "nombre": "andres",
+      "apellido": "penagos",
       "status": "activo"
     },
     {
@@ -27,9 +27,9 @@
     {
       "id": 4,
       "email": "prueba@test.com",
-      "nombre": "test1",
-      "apellido": "apelllio de prueba",
       "usuario": "testuser",
+      "nombre": "test1",
+      "apellido": "penag9os",
       "status": "activo"
     },
     {
@@ -70,6 +70,14 @@
       "usuario": "soe",
       "nombre": "soendra",
       "apellido": "henriquez",
+      "status": "activo"
+    },
+    {
+      "id": 10,
+      "email": "oracle406@gmail.com",
+      "usuario": "juan",
+      "nombre": "andres",
+      "apellido": "penagos",
       "status": "activo"
     }
   ]

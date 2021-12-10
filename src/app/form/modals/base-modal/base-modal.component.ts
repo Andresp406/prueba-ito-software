@@ -12,6 +12,7 @@ export class BaseModalComponent implements OnInit {
   @Input() target='';
   @ViewChild('divModal') divModal!: ElementRef;
   @Output() newUser = new EventEmitter<IDataUser>() ;
+  @Output() updateUser = new EventEmitter<IDataUser>() ;
   data:any;
   constructor(
     private modal :ModalService
@@ -29,6 +30,10 @@ export class BaseModalComponent implements OnInit {
 
   dataUser(event:IDataUser){
     this.newUser.emit(event);
+  }
+
+  updateDataUser(event:IDataUser){
+    this.updateUser.emit(event);
   }
 
 }

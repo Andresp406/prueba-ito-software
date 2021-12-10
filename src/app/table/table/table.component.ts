@@ -1,6 +1,9 @@
-import { Component, Input, OnInit, SimpleChanges, ElementRef } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges, ElementRef, ViewChild } from '@angular/core';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { CustomersService } from 'src/app/services/customers.service';
 import { IDataUser } from '../../form/modals/create-user/create-user.component';
+
+
 
 @Component({
   selector: 'app-table',
@@ -10,7 +13,10 @@ import { IDataUser } from '../../form/modals/create-user/create-user.component';
 export class TableComponent implements OnInit {
 
   @Input() dataUser!:IDataUser;
+  @ViewChild(MatPaginator) paginator !: MatPaginator;
   dataCustomers: any []=[];
+  page:number = 0;
+  
 
   constructor(
     private customers:CustomersService,
@@ -23,7 +29,7 @@ export class TableComponent implements OnInit {
       const change = changes.dataUser.currentValue;
       this.dataCustomers.push(change);
     }
-  }
+  } 
 
   ngOnInit(): void {
     this.customers.getAllCustomers().subscribe(resp => {
@@ -35,12 +41,20 @@ export class TableComponent implements OnInit {
     console.log(customer);
   }
 
-  edit(customer:IDataUser){
-    console.log(customer);
+  updateUser(customer:IDataUser){
+    this.dataUser = customer;
+  }
+
+  nextPage(){
+    this.page += 5;
 
   }
 
-
+  previousPage(){
+    if(this.page > 0){
+      this.page -= 5;
+    }
+  }
 
 
 

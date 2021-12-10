@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { IDataUser } from '../create-user/create-user.component';
+import { CustomersService } from '../../../services/customers.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-update-user',
@@ -12,14 +14,20 @@ export class UpdateUserComponent implements OnInit {
 
   @Input() user!:IDataUser;
   @Output() cerrarModal = new EventEmitter<boolean>();
+  @Output() modalEmitter = new EventEmitter<IDataUser>();
+
   forma:FormGroup;
 
-  constructor() {
+  constructor(
+    private customers:CustomersService,
+    private activateRouter: ActivatedRoute
+  ) {
     this.forma = this.setValidation();
    }
 
   ngOnInit(): void {
-    console.log(this.user)
+    this.activateRouter.params.subscribe(({id})=>{console.log(id)})
+
     const dataUser = {
       id: this.user.id,
       email: this.user.email,
@@ -49,8 +57,20 @@ export class UpdateUserComponent implements OnInit {
     });
   }
 
-  updateData(){
-    console.log(this.forma.controls)
+  updateData(customer:any){
+    const data = {
+      id : customer.target[0].value,
+      email: customer.target[1].value,
+      usuario: customer.target[2].value,
+      nombre : customer.target[3].value,
+      apellido : customer.target[4].value,
+      status : customer.target[5].value
+    }
+    this.customers.updateCustomer(data).subscribe(resp => {
+      this.user = resp;
+      this.modalEmitter.emit(resp);
+      this.cerrar(true);
+    })
   }
 
 }

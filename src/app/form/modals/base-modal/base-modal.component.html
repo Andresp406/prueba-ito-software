@@ -18,6 +18,7 @@
         *ngIf="target === 'editarUsuario'"
         (cerrarModal)="modal.close()"
         [user]="data"
+        (modalEmitter)="updateDataUser($event)"
       ></app-update-user>
     </div>
 </ng-template>

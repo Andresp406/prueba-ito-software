@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
 
   forma : FormGroup;
   dataUser!:IDataUser;
+  searchUser : string = '';
   constructor(
   ) {
     this.forma = this.setValidation();
@@ -36,5 +37,9 @@ export class DashboardComponent implements OnInit {
     this.dataUser = event;
   }
 
+  search(search:string){
+    console.log(search)
+
+  }
   
 }

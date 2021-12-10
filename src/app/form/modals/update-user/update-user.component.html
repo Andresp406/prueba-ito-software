@@ -14,7 +14,7 @@
   </div>
   <!-- Modal body -->
   <!-- (ngSubmit)="createEditProfile($event) -->
-  <form class="modal-body p-3" [formGroup]="forma" (ngSubmit)="updateData()">
+  <form class="modal-body p-3" [formGroup]="forma" (ngSubmit)="updateData($event)">
     <div class="mb-2 text-right" style="height: 50px">
       <input type="hidden" formControlName="id" />
       <input
