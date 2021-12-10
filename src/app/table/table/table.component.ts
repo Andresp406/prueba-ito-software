@@ -12,11 +12,12 @@ import { IDataUser } from '../../form/modals/create-user/create-user.component';
 export class TableComponent implements OnInit {
 
   @Input() dataUser!:IDataUser;
+  @Input() field:string='';
   @Input() searchUser:string='';
   @Output() data = new EventEmitter<IDataUser[]>();
   @Output() pagination = new EventEmitter<number>();
 
-  dataCustomers: any []=[];
+  dataCustomers: IDataUser []=[];
   page:number = 0;
   pag:number = 1;
   
@@ -24,6 +25,7 @@ export class TableComponent implements OnInit {
   constructor(
     private customers:CustomersService,
   ) {
+    this.getAllDataCustomers();
    }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -31,17 +33,25 @@ export class TableComponent implements OnInit {
       const change = changes.dataUser.currentValue;
       this.dataCustomers.push(change);
     }
+ 
   } 
 
   ngOnInit(): void {
+  }
+
+  getAllDataCustomers(){
     this.customers.getAllCustomers().subscribe(resp => {
       this.dataCustomers = resp;
       this.data.emit(resp)
     })
   }
 
-  updateUser(customer:IDataUser){
-    this.dataUser = customer;
+  updateUser(customer:IDataUser): void{
+    for (let key in this.dataCustomers) {
+        if (this.dataCustomers[key].id === customer.id){
+          this.dataCustomers[key] = customer;           
+        }
+    }
   }
 
   nextPage(){

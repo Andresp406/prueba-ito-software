@@ -3,8 +3,8 @@
     {
       "id": 1,
       "email": "prueba@test.com",
-      "usuario": "soendra",
-      "nombre": "test3",
+      "usuario": "soendr",
+      "nombre": "test",
       "apellido": "apelllio de prueba",
       "status": "activo"
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "email": "soendra2009@hotmail.com",
       "usuario": "andres",
-      "nombre": "andres",
+      "nombre": "soendra",
       "apellido": "penagos",
       "status": "activo"
     },

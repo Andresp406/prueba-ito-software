@@ -1,5 +1,5 @@
 <h1 class="container">Clientes</h1>
-<form class="container">
+<form class="container" [formGroup]="forma">
   <div class="row">
     <div class="col">
       <input
@@ -7,7 +7,8 @@
         class="form-control"
         placeholder="Email"
         #email
-        (keyup)="search(email.value)"
+        (keyup)="search(email.value, 'email')"
+        formControlName="email"
         
         
       />
@@ -18,8 +19,9 @@
         class="form-control"
         placeholder="Username"
         #usuario
-        (keyup)="search(usuario.value)"
-
+        (keyup)="search(usuario.value, 'usuario')"
+        formControlName="usuario"
+        
       />
     </div>
     <div class="col">
@@ -28,7 +30,8 @@
         class="form-control"
         placeholder="First Name"
         #nombre
-        (keyup)="search(nombre.value)"
+        (keyup)="search(nombre.value, 'nombre')"
+        formControlName="nombre"
 
       />
     </div>
@@ -38,7 +41,9 @@
         class="form-control"
         placeholder="Last name"
         #apellido
-        (keyup)="search(apellido.value)"
+        (keyup)="search(apellido.value, 'apellido')"
+        formControlName="apellido"
+
       />
     </div> 
   </div>
@@ -48,5 +53,5 @@
     </div>
   </div>
 </form>
-<app-table [dataUser]="dataUser" [searchUser]="searchUser" (data)="dataCustomer($event)" (pagination)="pagination($event)" ></app-table>
+<app-table [dataUser]="dataUser" [field]="field" [searchUser]="searchUser" (data)="dataCustomer($event)" (pagination)="pagination($event)" ></app-table>
 <app-base-modal #btnCreateUser [target]="'crearUsuario'" (newUser)="newUser($event)"></app-base-modal>

@@ -20,7 +20,7 @@
 
     <ng-template #data>
       <tbody>
-        <tr *ngFor="let customer of dataCustomers | pagination:page:searchUser" [ngStyle]="{'height': '100px'}">
+        <tr *ngFor="let customer of dataCustomers | pagination:page:searchUser:field" [ngStyle]="{'height': '100px'}">
           <th scope="row">{{customer?.id}}</th>
           <td>{{customer?.email}}</td>
           <td>{{customer?.usuario}}</td>
@@ -28,8 +28,9 @@
           <td>{{customer?.apellido}}</td>
           <td>{{customer?.status}}</td>
           <td class="">
-            <a href="javascript:void(0)" (click)="btnViewUser.open(customer)" ><i class="fas fa-eye ml-2 mr-2"></i></a>
-            <a href="javascript:void(0)" (click)="btnEditUser.open(customer)"><i class="fas fa-edit"></i></a> </td>
+            <a href="javascript:void(0)" (click)="btnViewUser.open(customer)"><i class="fas fa-eye"></i></a>
+            <a href="javascript:void(0)" (click)="btnEditUser.open(customer)"><i class="fas fa-edit"></i></a> 
+          </td>
         </tr>     
       </tbody>
     

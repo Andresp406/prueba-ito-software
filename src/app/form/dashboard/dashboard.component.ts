@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   dataUser!:IDataUser;
   customers:IDataUser[]=[]
   searchUser : string = '';
+  field : string = '';
   page:number = 0;
   constructor(
   ) {
@@ -24,24 +25,23 @@ export class DashboardComponent implements OnInit {
 
   setValidation(){
     return new FormGroup({
-      email : new FormControl(null, [Validators.required, Validators.email]),
-      usuario : new FormControl(null, [Validators.required]),
-      nombre: new FormControl(null, [ Validators.required]),
-      apellido: new FormControl(null, [Validators.required]),
+      email : new FormControl(null, [Validators.required, ]),
+      usuario : new FormControl(null, [Validators.required, ]),
+      nombre: new FormControl(null, [ Validators.required, ]),
+      apellido: new FormControl(null, [Validators.required, ]),
     });
   }
 
-  createUser(event:any){
-
-  }
+ 
 
   newUser(event:IDataUser){
     this.dataUser = event;
   }
 
-  search(search:string){
+  search(search:string, field:string){    
     this.page = 0; 
     this.searchUser = search;
+    this.field = field;
   }
 
   dataCustomer(customers:IDataUser[]){
