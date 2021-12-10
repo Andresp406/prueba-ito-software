@@ -38,5 +38,18 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
-  }
+  },
+  "description": "para correr correctamente este proyecto deben instalar el angular cli desde sui página oficial [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresp406/prueba-ito-software.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresp406/prueba-ito-software/issues"
+  },
+  "homepage": "https://github.com/andresp406/prueba-ito-software#readme"
 }

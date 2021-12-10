@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges, ElementRef, ViewChild } from '@angular/core';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { Component, Input, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { CustomersService } from 'src/app/services/customers.service';
 import { IDataUser } from '../../form/modals/create-user/create-user.component';
 
@@ -13,14 +12,17 @@ import { IDataUser } from '../../form/modals/create-user/create-user.component';
 export class TableComponent implements OnInit {
 
   @Input() dataUser!:IDataUser;
-  @ViewChild(MatPaginator) paginator !: MatPaginator;
+  @Input() searchUser:string='';
+  @Output() data = new EventEmitter<IDataUser[]>();
+  @Output() pagination = new EventEmitter<number>();
+
   dataCustomers: any []=[];
   page:number = 0;
+  pag:number = 1;
   
 
   constructor(
     private customers:CustomersService,
-
   ) {
    }
 
@@ -34,6 +36,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.customers.getAllCustomers().subscribe(resp => {
       this.dataCustomers = resp;
+      this.data.emit(resp)
     })
   }
 
@@ -47,12 +50,15 @@ export class TableComponent implements OnInit {
 
   nextPage(){
     this.page += 5;
+    this.pag += 1; 
 
   }
 
   previousPage(){
     if(this.page > 0){
       this.page -= 5;
+      this.pag -= 1; 
+
     }
   }
 

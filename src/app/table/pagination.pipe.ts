@@ -11,7 +11,7 @@ export class PaginationPipe implements PipeTransform {
       return users.slice(page, page + 5);
     }
     const filteredUsers = users.filter(user=> user.nombre.includes(search));
-    return filteredUsers;
+    return filteredUsers.slice(page, page + 5);
   }
 
 }

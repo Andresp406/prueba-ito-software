@@ -11,7 +11,9 @@ export class DashboardComponent implements OnInit {
 
   forma : FormGroup;
   dataUser!:IDataUser;
+  customers:IDataUser[]=[]
   searchUser : string = '';
+  page:number = 0;
   constructor(
   ) {
     this.forma = this.setValidation();
@@ -38,8 +40,17 @@ export class DashboardComponent implements OnInit {
   }
 
   search(search:string){
-    console.log(search)
+    this.page = 0;
+    this.searchUser = search;
+  }
 
+  dataCustomer(customers:IDataUser[]){
+    console.log(customers);
+    this.customers = customers;
+  }
+
+  pagination(page:number){
+    this.page = page;
   }
   
 }

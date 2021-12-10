@@ -10,25 +10,38 @@
         <th scope="col">Acciones</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let customer of dataCustomers | pagination:page" [ngStyle]="{'height': '100px'}">
-        <th scope="row">{{customer?.id}}</th>
-        <td>{{customer?.email}}</td>
-        <td>{{customer?.usuario}}</td>
-        <td>{{customer?.nombre}}</td>
-        <td>{{customer?.apellido}}</td>
-        <td>{{customer?.status}}</td>
-        <td class="">
-          <a href="javascript:void(0)" (click)="btnViewUser.open(customer)" ><i class="fas fa-eye ml-2 mr-2"></i></a>
-          <a href="javascript:void(0)" (click)="btnEditUser.open(customer)"><i class="fas fa-edit"></i></a> </td>
-      </tr>     
-    </tbody>
+    <ng-template *ngIf="(dataCustomers.length === 0); then noData; else data"></ng-template>
+
+
+    <ng-template #noData>
+      <h1>No hay mas Datos para mostrar</h1>
+    </ng-template>
+
+
+    <ng-template #data>
+      <tbody>
+        <tr *ngFor="let customer of dataCustomers | pagination:page:searchUser" [ngStyle]="{'height': '100px'}">
+          <th scope="row">{{customer?.id}}</th>
+          <td>{{customer?.email}}</td>
+          <td>{{customer?.usuario}}</td>
+          <td>{{customer?.nombre}}</td>
+          <td>{{customer?.apellido}}</td>
+          <td>{{customer?.status}}</td>
+          <td class="">
+            <a href="javascript:void(0)" (click)="btnViewUser.open(customer)" ><i class="fas fa-eye ml-2 mr-2"></i></a>
+            <a href="javascript:void(0)" (click)="btnEditUser.open(customer)"><i class="fas fa-edit"></i></a> </td>
+        </tr>     
+      </tbody>
+    
+    </ng-template>
+
+    
   </table>
 
   <ul class="pagination">
-    <li class="page-item"><a class="page-link" (click)="previousPage()" style="cursor: pointer;">Previous</a></li>
-    <li class="page-item"><a class="page-link">1</a></li>
-    <li class="page-item"><a class="page-link" (click)="nextPage()" style="cursor: pointer;">Next</a></li>
+    <li class="page-item"><button class="page-link" (click)="previousPage()"  style="cursor: pointer;">Previous</button></li>
+    <li class="page-item"><a class="page-link">{{pag}}</a></li>
+    <li class="page-item"><button class="page-link" (click)="nextPage()" [disabled]="(dataCustomers | pagination:page:searchUser).length === 0">Next</button></li>
   </ul>
    
   <app-base-modal #btnViewUser [target]="'verUsuario'"></app-base-modal>

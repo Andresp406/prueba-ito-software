@@ -1,3 +1,4 @@
+<h1 class="container">Clientes</h1>
 <form [formGroup]="forma" (ngSubmit)="createUser($event)" class="container">
   <div class="row">
     <div class="col">
@@ -8,6 +9,8 @@
         formControlName="email"
         #txtSearch
         (keyup)="search(txtSearch.value)"
+        
+        
       />
     </div>
     <div class="col">
@@ -45,12 +48,12 @@
   </div>
   <div class="row mt-3">
     <div class="col-md-2">
-      <button class="btn btn-primary ">Buscar</button>
+      <button class="btn btn-primary">Buscar</button>
     </div>
     <div class="col-md-2 w-full">
       <button class="btn btn-secondary " (click)="btnCreateUser.open($event)">Crear</button>
     </div>
   </div>
 </form>
-<app-table [dataUser]="dataUser"></app-table>
+<app-table [dataUser]="dataUser" [searchUser]="searchUser" (data)="dataCustomer($event)" (pagination)="pagination($event)" ></app-table>
 <app-base-modal #btnCreateUser [target]="'crearUsuario'" (newUser)="newUser($event)"></app-base-modal>

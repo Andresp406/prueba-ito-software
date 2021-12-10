@@ -43,23 +43,23 @@
     {
       "id": 6,
       "email": "prueba@test.com",
+      "usuario": "victor",
       "nombre": "test1",
       "apellido": "apelllio de prueba",
-      "usuario": "testuser",
       "status": "inactivo"
     },
     {
       "id": 7,
       "email": "prueba@test.com",
+      "usuario": "username",
       "nombre": "test1",
       "apellido": "apelllio de prueba",
-      "usuario": "testuser",
       "status": "inactivo"
     },
     {
       "id": 8,
       "email": "oracle406@gmail.com",
-      "usuario": "oracle",
+      "usuario": "oraculo",
       "nombre": "andres",
       "apellido": "penagos",
       "status": "inactivo"
@@ -76,6 +76,14 @@
       "id": 10,
       "email": "oracle406@gmail.com",
       "usuario": "juan",
+      "nombre": "andres",
+      "apellido": "penagos",
+      "status": "activo"
+    },
+    {
+      "id": 11,
+      "email": "fotografofe@gmail.com",
+      "usuario": "andresp",
       "nombre": "andres",
       "apellido": "penagos",
       "status": "activo"
