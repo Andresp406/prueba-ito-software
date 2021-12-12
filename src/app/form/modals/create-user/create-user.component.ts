@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 import { CustomersService } from '../../../services/customers.service';
 
@@ -27,7 +28,9 @@ export class CreateUserComponent implements OnInit {
   @Output() dataUser = new EventEmitter<IDataUser>();
   
   constructor(
-    private customer : CustomersService
+    private customer : CustomersService,
+    private toastr: ToastrService
+
   ) { 
     this.forma = this.setValidation();
     this.status = [
@@ -64,9 +67,10 @@ export class CreateUserComponent implements OnInit {
     const data = this.objDataCustomer(event);    
     this.customer.setCustomer(data).subscribe((resp:any) => {
       this.dataUser.emit(resp)
-    
       this.cerrar(true);    
-
+      this.toastr.info('Cliente Ingresado Exitosamente!', '', {timeOut:1000});
+  
+      
     });
   }
 

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IDataUser } from '../form/modals/create-user/create-user.component';
@@ -25,6 +26,7 @@ export class CustomersService {
   setCustomer(body: IDataUser):Observable<any>{
     const url = `${environment.api_base_url}/users`;
     const headers = this.headers;
+
     return this._http.post<any>(url, body, {headers});
     
   }

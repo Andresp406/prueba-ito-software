@@ -6,6 +6,8 @@ import { BaseModalComponent } from './base-modal/base-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 
@@ -19,7 +21,9 @@ import { ViewUserComponent } from './view-user/view-user.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    ToastrModule
+
   ],
   exports:[
     BaseModalComponent,    

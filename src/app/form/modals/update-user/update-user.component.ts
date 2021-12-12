@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { IDataUser } from '../create-user/create-user.component';
 import { CustomersService } from '../../../services/customers.service';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-user',
@@ -20,7 +21,9 @@ export class UpdateUserComponent implements OnInit {
 
   constructor(
     private customers:CustomersService,
-    private activateRouter: ActivatedRoute
+    private activateRouter: ActivatedRoute,
+    private toastr: ToastrService
+
   ) {
     this.forma = this.setValidation();
    }
@@ -70,6 +73,8 @@ export class UpdateUserComponent implements OnInit {
       this.user = resp;
       this.modalEmitter.emit(resp);
       this.cerrar(true);
+      this.toastr.success('Cliente Actualizado Exitosamente!', '', {timeOut:1000});
+
     })
   }
 

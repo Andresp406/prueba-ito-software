@@ -45,7 +45,6 @@ export class DashboardComponent implements OnInit {
   }
 
   dataCustomer(customers:IDataUser[]){
-    console.log(customers);
     this.customers = customers;
   }
 

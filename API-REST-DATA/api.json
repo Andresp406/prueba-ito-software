@@ -87,6 +87,118 @@
       "nombre": "andres",
       "apellido": "penagos",
       "status": "activo"
+    },
+    {
+      "id": 12,
+      "email": "marinera@gmail.com",
+      "usuario": "marinera",
+      "nombre": "penagos",
+      "apellido": "henriquez",
+      "status": "inactivo"
+    },
+    {
+      "id": 13,
+      "email": "thianau02@gmail.com",
+      "usuario": "thiago02",
+      "nombre": "thiago",
+      "apellido": "urbina",
+      "status": "activo"
+    },
+    {
+      "id": 14,
+      "email": "juanpenagos@gmail.net",
+      "usuario": "juancho01",
+      "nombre": "Juan",
+      "apellido": "Penagos",
+      "status": "inactivo"
+    },
+    {
+      "id": 15,
+      "email": "katherinearredondo2021@gmail.com",
+      "usuario": "Lucho0102",
+      "nombre": "luis",
+      "apellido": "rodriguez",
+      "status": "inactivo"
+    },
+    {
+      "id": 16,
+      "email": "thianau02@gmail.com",
+      "usuario": "thys",
+      "nombre": "soendra",
+      "apellido": "henriquez",
+      "status": "activo"
+    },
+    {
+      "id": 17,
+      "email": "oracle406@gmail.com",
+      "usuario": "sucbjet",
+      "nombre": "sujeto",
+      "apellido": "locombia",
+      "status": "inactivo"
+    },
+    {
+      "id": 18,
+      "email": "katherinearredondo2021@gmail.com",
+      "usuario": "aaa",
+      "nombre": "maria",
+      "apellido": "penagos barajas",
+      "status": "activo"
+    },
+    {
+      "id": 19,
+      "email": "oracle406@gmail.com",
+      "usuario": "sas",
+      "nombre": "andres",
+      "apellido": "penagos",
+      "status": "activo"
+    },
+    {
+      "id": 20,
+      "email": "katherinearredondo2021@gmail.com",
+      "usuario": "caca",
+      "nombre": "luis",
+      "apellido": "rodriguez",
+      "status": "inactivo"
+    },
+    {
+      "id": 21,
+      "email": "oracle406@gmail.com",
+      "usuario": "afdsf",
+      "nombre": "andres",
+      "apellido": "penagos",
+      "status": "activo"
+    },
+    {
+      "id": 22,
+      "email": "katherinearredondo2021@gmail.com",
+      "usuario": "dad",
+      "nombre": "maria",
+      "apellido": "penagos barajas",
+      "status": "activo"
+    },
+    {
+      "id": 23,
+      "email": "oracle406@gmail.com",
+      "usuario": "adfadff",
+      "nombre": "andres",
+      "apellido": "penagos",
+      "status": "activo"
+    },
+    {
+      "id": 24,
+      "email": "katherinearredondo2021@gmail.com",
+      "usuario": "adada",
+      "nombre": "luis",
+      "apellido": "rodriguez",
+      "status": "activo"
+    },
+    {
+      "id": 25,
+      "email": "oracle406@gmail.com",
+      "usuario": "asddad",
+      "nombre": "sujeto",
+      "apellido": "locombia",
+      "status": "activo"
     }
   ]
 }

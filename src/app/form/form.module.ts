@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from './modals/modal.module';
 import { TableModule } from '../table/table.module';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TableModule } from '../table/table.module';
     NgbModule,
     ModalModule,
     TableModule,
+    ToastrModule
   ]
 })
 export class FormModule { }
