@@ -59,7 +59,7 @@
     {
       "id": 8,
       "email": "oracle406@gmail.com",
-      "usuario": "oraculo",
+      "usuario": "oracle",
       "nombre": "andres",
       "apellido": "penagos",
       "status": "inactivo"
@@ -198,6 +198,46 @@
       "usuario": "asddad",
       "nombre": "sujeto",
       "apellido": "locombia",
+      "status": "activo"
+    },
+    {
+      "id": 26,
+      "email": "katherinearredondo2021@gmail.com",
+      "usuario": "111",
+      "nombre": "maria",
+      "apellido": "penagos barajas",
+      "status": "activo"
+    },
+    {
+      "id": 27,
+      "email": "oracle406@gmail.com",
+      "usuario": "2eqwdqdcq",
+      "nombre": "sujeto",
+      "apellido": "locombia",
+      "status": "activo"
+    },
+    {
+      "id": 28,
+      "email": "elpuchis@puchis.com",
+      "usuario": "elpuchis",
+      "nombre": "andres",
+      "apellido": "penagos",
+      "status": "activo"
+    },
+    {
+      "id": 29,
+      "email": "lksdjadskljf@lakdsjds.com",
+      "usuario": "ldaksjdal",
+      "nombre": "lkdsajdl",
+      "apellido": "laskdj",
+      "status": "activo"
+    },
+    {
+      "id": 30,
+      "email": "frida@khalu.com",
+      "usuario": "frida",
+      "nombre": "frida",
+      "apellido": "penagos",
       "status": "activo"
     }
   ]

@@ -64,11 +64,12 @@ export class CreateUserComponent implements OnInit {
   }
 
   createEditProfile(event:any){
-    const data = this.objDataCustomer(event);    
+    const data = this.objDataCustomer(event);
+    console.log(data)    
     this.customer.setCustomer(data).subscribe((resp:any) => {
       this.dataUser.emit(resp)
       this.cerrar(true);    
-      this.toastr.info('Cliente Ingresado Exitosamente!', '', {timeOut:1000});
+      this.toastr.success('Cliente Ingresado Exitosamente!', 'Crear Cliente', {timeOut:1000});
   
       
     });
@@ -77,11 +78,11 @@ export class CreateUserComponent implements OnInit {
   private objDataCustomer(event:any){
     const data:IDataUser = {
       id : this.id + 1,
-      email : event.target[1].value,
-      usuario : event.target[2].value,
-      nombre : event.target[3].value,
-      apellido : event.target[4].value,
-      status :  event.target[5].value
+      email : this.forma.get('email')?.value,
+      usuario : this.forma.get('usuario')?.value,
+      nombre : this.forma.get('nombre')?.value,
+      apellido : this.forma.get('apellido')?.value,
+      status :  this.forma.get('status')?.value
     }
     return data;
   }
